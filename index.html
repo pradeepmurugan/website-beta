@@ -23,7 +23,7 @@ $("#table").hide();
     $("button").click(function(){
     $("#table").show()
         $.get("https://jsonplaceholder.typicode.com/posts/1", function(data){
-        console.log(JSON.stringify(data));
+        JSON.stringify(data);
         $('#table').bootstrapTable({
                 //Assigning data to table
                 data: data
