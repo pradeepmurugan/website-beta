@@ -24,11 +24,8 @@ $("#table").hide();
     $("#table").show()
         $.get("https://jsonplaceholder.typicode.com/posts/1", function(data){
          JSON.stringify(data);
-         var arr =[];
-         foreach(data)
-         {
+         var arr =[1];
          arr.push(data);
-         }
         $('#table').bootstrapTable({
                 //Assigning data to table
                 data: arr
