@@ -22,6 +22,7 @@ $(document).ready(function(){
 $("#table").hide();
     $("button").click(function(){
     $("#table").show()
+     console.log("Hello.");
         $.get("https://jsonplaceholder.typicode.com/posts", function(data){
         console.log(JSON.stringify(data));
         $('#table').bootstrapTable({
