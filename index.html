@@ -22,12 +22,12 @@ $(document).ready(function(){
 $("#table").hide();
     $("button").click(function(){
     $("#table").show()
-        $.get("https://jsonplaceholder.typicode.com/posts/1", function(data){
+        $.get("https://jsonplaceholder.typicode.com/posts/1", (function(data){
          var arr =[];
          foreach(data)
          {
          arr.push(data);
-         }
+         });
         JSON.stringify(arr);
         $('#table').bootstrapTable({
                 //Assigning data to table
