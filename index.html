@@ -22,7 +22,7 @@ $(document).ready(function(){
 $("#table").hide();
     $("button").click(function(){
     $("#table").show()
-        $.get("https://jsonplaceholder.typicode.com/posts/1", function(data){
+        $.get("https://jsonplaceholder.typicode.com/posts/", function(data){
          JSON.stringify(data);
          var arr =[];
          arr.push(data);
