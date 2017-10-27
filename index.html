@@ -19,8 +19,9 @@ $(document).ready(function(){
  
 $("#table").hide();
     $("button").click(function(){
-    $("#table").show();
      var arr =[];
+    $("#table").show();
+     
         $.get("https://jsonplaceholder.typicode.com/posts/1",{async: true}, function(data){
          JSON.stringify(data);
          arr.push(data);   
