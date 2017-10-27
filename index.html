@@ -26,9 +26,23 @@ $("#table").hide();
      var arr =[];
         $.get("https://jsonplaceholder.typicode.com/posts/1",{async: true}, function(data){
          JSON.stringify(data);
-         arr.push(data);
-        
-            
+         arr.push(data);   
+        });
+     $.get("https://jsonplaceholder.typicode.com/posts/2",{async: true}, function(data){
+         JSON.stringify(data);
+         arr.push(data);   
+        });
+     $.get("https://jsonplaceholder.typicode.com/posts/3",{async: true}, function(data){
+         JSON.stringify(data);
+         arr.push(data);   
+        });
+     $.get("https://jsonplaceholder.typicode.com/posts/4",{async: true}, function(data){
+         JSON.stringify(data);
+         arr.push(data);   
+        });
+     $.get("https://jsonplaceholder.typicode.com/posts/5",{async: true}, function(data){
+         JSON.stringify(data);
+         arr.push(data);   
         });
      $('#table').bootstrapTable({
                 //Assigning data to table
