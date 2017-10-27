@@ -16,12 +16,10 @@
     
 <script>
 $(document).ready(function(){
- 
 $("#table").hide();
     $("button").click(function(){
-     var arr =[];
     $("#table").show();
-     
+     var arr =[];
         $.get("https://jsonplaceholder.typicode.com/posts/1",{async: true}, function(data){
          JSON.stringify(data);
          arr.push(data);   
