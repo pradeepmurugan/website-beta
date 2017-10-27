@@ -19,12 +19,12 @@
     
 <script>
 $(document).ready(function(){
+ var arr =[];
 $("#table").hide();
     $("button").click(function(){
     $("#table").show()
         $.get("https://jsonplaceholder.typicode.com/posts/1",{async: true}, function(data){
          JSON.stringify(data);
-         var arr =[];
          arr.push(data);
         
             
