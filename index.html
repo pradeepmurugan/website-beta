@@ -23,8 +23,6 @@ $("#table").hide();
         $.get("https://jsonplaceholder.typicode.com/posts/1",{async: true}, function(data){
          JSON.stringify(data);
          arr.push(data);
-         console.log(data);
-         console.log(arr);
         });
      $.get("https://jsonplaceholder.typicode.com/posts/2",{async: true}, function(data){
          JSON.stringify(data);
@@ -36,7 +34,9 @@ $("#table").hide();
         });
      $.get("https://jsonplaceholder.typicode.com/posts/4",{async: true}, function(data){
          JSON.stringify(data);
-         arr.push(data);   
+         arr.push(data);
+         console.log(data);
+         console.log(arr);
         });
      $.get("https://jsonplaceholder.typicode.com/posts/5",{async: true}, function(data){
          JSON.stringify(data);
