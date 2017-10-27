@@ -7,45 +7,31 @@
 </head>
 
  <meta charset="UTF-8">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css" />
 </head>
     
 <script>
 $(document).ready(function(){
-$("#table").hide();
- var arr =[];
+    $("#table").hide();
     $("button").click(function(){
     $("#table").show();
-        $.get("https://jsonplaceholder.typicode.com/posts/1",{async: true}, function(data){
-         JSON.stringify(data);
-         arr.push(data);
-        });
-     $.get("https://jsonplaceholder.typicode.com/posts/2",{async: true}, function(data){
-         JSON.stringify(data);
-         arr.push(data);   
-        });
-     $.get("https://jsonplaceholder.typicode.com/posts/3",{async: true}, function(data){
-         JSON.stringify(data);
-         arr.push(data);   
-        });
-     $.get("https://jsonplaceholder.typicode.com/posts/4",{async: true}, function(data){
-         JSON.stringify(data);
-         arr.push(data);
-        });
-     $.get("https://jsonplaceholder.typicode.com/posts/5",{async: true}, function(data){
-         JSON.stringify(data);
-         arr.push(data);
-         console.log(data);
-         console.log(arr);
-      $('#table').bootstrapTable({
-                //Assigning data to table
-                data: arr
-            });
-        });
+     var arr = new Array();
+     function callback(data)
+     {
+        arr.push(data);
+        $('#table').bootstrapTable({ data: arr });
+        $('#table').bootstrapTable('refreshOptions', { data: arr });
+     }
+     $.getJSON("https://jsonplaceholder.typicode.com/posts/1", callback);
+     $.getJSON("https://jsonplaceholder.typicode.com/posts/2", callback);
+     $.getJSON("https://jsonplaceholder.typicode.com/posts/3", callback);
+     $.getJSON("https://jsonplaceholder.typicode.com/posts/4", callback);
+     $.getJSON("https://jsonplaceholder.typicode.com/posts/5", callback);
+     console.log("hello");
     });
 });
 </script>
