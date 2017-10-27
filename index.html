@@ -17,12 +17,14 @@
 <script>
 $(document).ready(function(){
 $("#table").hide();
+ var arr =[];
     $("button").click(function(){
     $("#table").show();
-     var arr =[];
         $.get("https://jsonplaceholder.typicode.com/posts/1",{async: true}, function(data){
          JSON.stringify(data);
-         arr.push(data);   
+         arr.push(data);
+         console.log(data);
+         console.log(arr);
         });
      $.get("https://jsonplaceholder.typicode.com/posts/2",{async: true}, function(data){
          JSON.stringify(data);
