@@ -35,15 +35,17 @@ $("#table").hide();
      $.get("https://jsonplaceholder.typicode.com/posts/4",{async: true}, function(data){
          JSON.stringify(data);
          arr.push(data);
-         console.log(data);
-         console.log(arr);
         });
      $.get("https://jsonplaceholder.typicode.com/posts/5",{async: true}, function(data){
          JSON.stringify(data);
-         arr.push(data);   
+         arr.push(data);
+         console.log(data);
+         console.log(arr);
+      $('#table').bootstrapTable({
+                //Assigning data to table
+                data: arr
+            });
         });
-     console.log("Hello");
-     console.log(arr);
     });
 });
 </script>
