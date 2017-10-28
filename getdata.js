@@ -1,3 +1,5 @@
+function clickfunction{
+    
 $(document).ready(function(){
     $("#table").hide();
     $("button").click(function(){
@@ -17,3 +19,4 @@ $(document).ready(function(){
      console.log("hello");
     });
 });
+}
