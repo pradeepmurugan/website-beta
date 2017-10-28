@@ -26,11 +26,11 @@ $(document).ready(function(){
         $('#table').bootstrapTable({ data: arr });
         $('#table').bootstrapTable('refreshOptions', { data: arr });
      }
-     $.getJSON("https://jsonplaceholder.typicode.com/posts/1", callback);
-     $.getJSON("https://jsonplaceholder.typicode.com/posts/2", callback);
-     $.getJSON("https://jsonplaceholder.typicode.com/posts/3", callback);
-     $.getJSON("https://jsonplaceholder.typicode.com/posts/4", callback);
-     $.getJSON("https://jsonplaceholder.typicode.com/posts/5", callback);
+     $.get("https://jsonplaceholder.typicode.com/posts/1", callback);
+     $.get("https://jsonplaceholder.typicode.com/posts/2", callback);
+     $.get("https://jsonplaceholder.typicode.com/posts/3", callback);
+     $.get("https://jsonplaceholder.typicode.com/posts/4", callback);
+     $.get("https://jsonplaceholder.typicode.com/posts/5", callback);
      console.log("hello");
     });
 });
