@@ -1,6 +1,5 @@
 
    $(document).ready(function(){
-    $("#table").hide();
     $("button").click(function(){
     $("#table").show();
      var arr = new Array();
