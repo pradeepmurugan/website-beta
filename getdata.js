@@ -1,6 +1,5 @@
-function clickfunction{
-    
-$(document).ready(function(){
+
+   $(document).ready(function(){
     $("#table").hide();
     $("button").click(function(){
     $("#table").show();
@@ -19,4 +18,3 @@ $(document).ready(function(){
      console.log("hello");
     });
 });
-}
