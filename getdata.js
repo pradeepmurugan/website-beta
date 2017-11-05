@@ -3,7 +3,6 @@
       $("#table").hide();
     $("button").click(function(){
        $('#img').show();
-       window.setTimeout(callback,5000);
     $("#table").show();
      var arr = new Array();
      function callback(data)
@@ -19,5 +18,6 @@
      $.get("https://jsonplaceholder.typicode.com/posts/5", callback);
      console.log("hello");
     });
+      window.setTimeout(callback,5000);
 });
 
