@@ -3,7 +3,8 @@
       $("#table").hide();
     $("button").click(function(){
        $('#img').show();
-   
+       /*
+    $("#table").show();
      var arr = new Array();
      function callback(data)
      {
@@ -19,3 +20,4 @@
      console.log("hello");
     });
 });
+*/
