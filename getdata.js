@@ -18,6 +18,7 @@
      $.get("https://jsonplaceholder.typicode.com/posts/4", callback);
      $.get("https://jsonplaceholder.typicode.com/posts/5", callback);
      console.log("hello");
+     */
     });
 });
-*/
+
