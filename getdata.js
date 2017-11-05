@@ -3,9 +3,8 @@
       $("#table").hide();
     $("button").click(function(){
        $('#img').show();
-       setTimeout($("#table"), 2000);
+       setTimeout($"#table", 2000);
     $("#table").show();
-       $('#img').hide();
      var arr = new Array();
      function callback(data)
      {
