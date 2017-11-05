@@ -18,6 +18,6 @@
      $.get("https://jsonplaceholder.typicode.com/posts/5", callback);
      console.log("hello");
     });
-      window.setTimeout(callback,5000);
+      setTimeout(callback,1000);
 });
 
