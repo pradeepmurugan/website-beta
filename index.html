@@ -5,8 +5,8 @@
     <title>Django Forms Tutorial</title>
 </head>
 <body>
-<h2>Django Forms Tutorial3</h2>
-<form id="myForm" method="post"action="/getdata">
+<h2>Django Forms Tutorial4</h2>
+<form id="form" name="form" action="/getdata">
     <table>
         <tr>
             <td>Enter your name:</td>
@@ -31,16 +31,40 @@
     </table>
 </form>
 <script>
-function submitForm(){
-var formData=JSON.stringify($("myForm").serialize());
-$.ajax({
-  type: "POST",
-  url: "/getdata",
-  data: formData,
-  success: function(){},
-  dataType: "json",
-  contentType : "application/json"
+$(document).ready(function(){
+    var contextroot = "/getdata/"
+    $("#form").submit(function(e){
+        e.preventDefault();
+        var form = $(this);
+        var action = form.attr("action");
+        var data = form.serializeArray();
+
+        $.ajax({
+                    url: contextroot+action,
+                    dataType: 'json',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(getFormData(data)),
+                    success: function(data){
+                        console.log("DATA POSTED SUCCESSFULLY"+data);
+                    },
+                    error: function( jqXhr, textStatus, errorThrown ){
+                        console.log( errorThrown );
+                    }
+        });
 });
+});
+
+//utility function
+function getFormData(data) {
+   var unindexed_array = data;
+   var indexed_array = {};
+
+   $.map(unindexed_array, function(n, i) {
+    indexed_array[n['name']] = n['value'];
+   });
+
+   return indexed_array;
 }
 </script>
 </body>
