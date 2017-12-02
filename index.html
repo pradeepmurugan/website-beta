@@ -5,8 +5,8 @@
     <title>Django Forms Tutorial</title>
 </head>
 <body>
-<h2>Django Forms Tutorial5</h2>
-<form onsubmit="myFunction()"name="myForm">
+<h2>Django Forms Tutorial6</h2>
+<form enctype="application/json" name="myForm">
     <table>
         <tr>
             <td>Enter your name:</td>
@@ -31,21 +31,6 @@
     </table>
 </form>
     
-<script>
-$(document).ready(myFunction() {
-           
-var formData = JSON.stringify($("#myForm").serializeArray());
-             $.ajax({
-  type: "POST",
-  url: "/getdata",
-  data: formData,
-  success: function(){},
-  dataType: "json",
-  contentType : "application/json"
-});
-            
-        });
-}
-</script>
+
 </body>
 </html>           
