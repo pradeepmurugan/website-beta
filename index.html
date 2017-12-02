@@ -25,23 +25,26 @@
 
             </td>
             <td>
-                <input value="Submit" type="submit" onclick="submitForm()">
+                <button type="submit" id="button1">Submit</button>
             </td>
         </tr>
     </table>
 </form>
 <script>
-function submitForm(){
-var formData=JSON.stringify($("myForm").serializeArray());
-$.ajax({
+$(document).ready(function () {
+            $("#button1").click(function () {
+var formData = JSON.stringify($("#myForm").serializeArray());
+             $.ajax({
   type: "POST",
-  url: "serverUrl",
+  url: "/getdata",
   data: formData,
   success: function(){},
   dataType: "json",
   contentType : "application/json"
 });
+            });
+        });
 }
 </script>
 </body>
-</html>
+</html>           
