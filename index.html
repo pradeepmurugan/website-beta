@@ -1,72 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Django Forms Tutorial</title>
 </head>
+
 <body>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<h2>Django Forms Tutorial6</h2>
-<form id="form" name="form" action="/getdata"method="post">
-    <table>
-        <tr>
-            <td>Enter your name:</td>
-            <td><input type="text" name="name"/></td>
-        </tr>
-        <tr>
-            <td>Enter your email:</td>
-            <td><input type="email" name="email"/></td>
-        </tr>
-        <tr>
-            <td>Enter your phone:</td>
-            <td><input type="text" name="phone"/></td>
-        </tr>
-        <tr>
-            <td>
+    <div class="container-fluid">
+        <center>
+            <div class="col-sm-4">
+                <h3>Manage users</h3>
+        </center>
+        </div>
+        <hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px">
+        <div class="row ">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-1">
+                <button type="button " class="btn btn-success " id="create">Create</button>
+            </div>
+            <div class="col-sm-1 ">
+                <button type="button " class="btn btn-danger ">Remove</button>
+            </div>
+            <div class="col-sm-1 ">
+                <button type="button " class="btn btn-info ">Update</button>
+            </div>
+            <div class="col-sm-1 ">
+                <button type="button " class="btn btn-primary ">Display</button>
+            </div>
+            <div class="col-sm-7 "></div>
+        </div>
+    </div>
+    <br>
+    <div class="container ">
+        <form id="form" name="form" action="/getdata" method="post">
 
-            </td>
-            <td>
-                <input value="Submit" type="submit">
-            </td>
-        </tr>
-    </table>
-</form>
-<script>
-$(document).ready(function(){
-    var contextroot = "/getdata/"
-    $("#form").submit(function(e){
-        e.preventDefault();
-        var form = $(this);
-        var action = form.attr("action");
-        var data = form.serializeArray();
+            <div class="col-xs-3 ">
+                <div class="row">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+                </div>
 
-        $.ajax({
-                    url: contextroot+action,
-                    dataType: 'json',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify(getFormData(data)),
-                    success: function(data){
-                        console.log("DATA POSTED SUCCESSFULLY"+data);
-                    },
-                    error: function( jqXhr, textStatus, errorThrown ){
-                        console.log( errorThrown );
-                    }
-        });
-});
-});
 
-//utility function
-function getFormData(data) {
-   var unindexed_array = data;
-   var indexed_array = {};
 
-   $.map(unindexed_array, function(n, i) {
-    indexed_array[n['name']] = n['value'];
-   });
+                <div class="row">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+                </div>
+                <div class="row">
+                    <label for="fullname">Full name:</label>
+                    <input type="text" class="form-control" id="fullname" placeholder="Enter fullname" name="fullname">
+                </div>
 
-   return indexed_array;
-}
-</script>
+                <div class="row">
+                    <label for="active">
+                        <input type="checkbox" id="active" name="active ">&nbsp;&nbsp;Is Active&nbsp;&nbsp;&nbsp;</label>
+                    <label for="temp">
+                        <input type="checkbox" id="temp" name="temp">&nbsp;&nbsp;Is Temp</label>
+                </div>
+
+                <div class="row">
+                    <input type="submit " value="submit">
+                </div>
+        </form>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("#form").hide();
+                $("#create").click(function () {
+                    $("#form").show();
+                });
+                var contextroot = "/getdata/"
+                $("#form").submit(function (e) {
+                    e.preventDefault();
+                    var form = $(this);
+                    var action = form.attr("action");
+                    var data = form.serializeArray();
+                    $.ajax({
+                        url: contextroot + action,
+                        dataType: 'json',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify(getFormData(data)),
+                        success: function (data) {
+                            console.log("DATA POSTED SUCCESSFULLY" + data);
+                        },
+                        error: function (jqXhr, textStatus, errorThrown) {
+                            console.log(errorThrown);
+                        }
+                    });
+                });
+            });
+            //utility function
+            function getFormData(data) {
+                var unindexed_array = data;
+                var indexed_array = {};
+                $.map(unindexed_array, function (n, i) {
+                    indexed_array[n['name']] = n['value'];
+                });
+                return indexed_array;
+            }
+        </script>
 </body>
+
 </html>
