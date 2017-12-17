@@ -4,7 +4,7 @@ $(document).ready(function () {
         $("#createform").show();
     });
     var contextroot = ""
-    $("#createform").submit(function (e) {
+    $("#form").submit(function (e) {
         e.preventDefault();
         var form = $(this);
         var action = form.attr("action");
