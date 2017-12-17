@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#createform").hide();
     $("#create").click(function () {
-        $("#form").show();
+        $("#createform").show();
     });
     var contextroot = ""
     $("#createform").submit(function (e) {
