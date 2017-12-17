@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    $("#form").hide();
+    $("#createform").hide();
     $("#create").click(function () {
         $("#form").show();
     });
     var contextroot = ""
-    $("#form").submit(function (e) {
+    $("#createform").submit(function (e) {
         e.preventDefault();
         var form = $(this);
         var action = form.attr("action");
