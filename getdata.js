@@ -2,8 +2,7 @@ $(document).ready(function () {
     $("#createform").hide();
     $("#create").click(function () {
         $("#createform").show();
-
-        var contextroot = ""
+        var contextroot = "";
         $("#createform").submit(function (e) {
             e.preventDefault();
             var form = $(this);
