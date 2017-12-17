@@ -6,9 +6,9 @@ $(document).ready(function () {
     var contextroot = ""
     $("#createform").submit(function (e) {
         e.preventDefault();
-        var form = $(this);
-        var action = form.attr("action");
-        var data = form.serializeArray();
+        var createform = $(this);
+        var action = createform.attr("action");
+        var data = createform.serializeArray();
         $.ajax({
             url: contextroot + action,
             dataType: 'json',
