@@ -37,7 +37,7 @@ $(document).ready(function () {
             $.ajax({
                 url: contextroot + action,
                 dataType: 'json',
-                type: 'POST',
+                type: 'DELETE',
                 contentType: 'application/json',
                 data: JSON.stringify(getFormData(data)),
                 success: function (data) {
@@ -60,7 +60,7 @@ $(document).ready(function () {
             $.ajax({
                 url: contextroot + action,
                 dataType: 'json',
-                type: 'POST',
+                type: 'GET',
                 contentType: 'application/json',
                 data: JSON.stringify(getFormData(data)),
                 success: function (data) {
